@@ -1,0 +1,58 @@
+.container
+{
+        display: flex;
+        
+
+        background-color: aquamarine;
+        align-items: center;
+        justify-content: center;
+
+        flex-direction: column;
+}
+
+button
+{
+        border-radius: 20px;
+
+        width: 100px;
+        height: 100px;
+        margin: 20px;
+}
+
+.hover-me
+{
+        color: red;
+        cursor: crosshair;
+
+}
+
+.hover-me:hover
+{
+
+        background-color:darksalmon;
+        background-size: 200% 100%;
+        transform: scale(1.5);
+        transition-duration: 0.5s;
+
+}
+
+.hover-me::after
+{
+        background-color: red;
+}
+
+.hover-me:hover::after
+{
+        background-color: red;
+}
+
+.click-me
+{
+        cursor: pointer;
+        background-image: linear-gradient(135deg, red 20%, darksalmon 50%);
+}
+
+.click-me:active
+{
+        box-shadow: 10px 10px 5px red, 5px 5px 10px blue;
+}
