@@ -1,0 +1,32 @@
+:root
+{
+        --ink: black;
+        --paper: white;
+        --accent: green;
+}
+
+body
+{
+        background: var(--paper);
+        color: var(--ink);         
+        transition: background 0.3s ease, color 0.3s; /* Smooth transition */
+}
+
+.dark-mode
+{
+        --ink: white;
+        --paper: black;
+        --accent: green;
+}
+
+.light-mode
+{
+        --ink: black;
+        --paper: white;
+        --accent: green;
+}
+
+h1 em
+{
+        background: var(--accent);
+}
