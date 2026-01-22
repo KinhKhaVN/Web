@@ -1,0 +1,114 @@
+:root
+{
+        --accent: green;
+        --paper: white;
+        --ink: black;
+}
+
+body
+{
+        margin: 0;
+        transition: background 0.3s, color 0.3s;
+        background: var(--paper);
+        border-color: red;
+        border: solid;
+        color: var(--ink);
+
+}
+
+.dark-mode
+{
+        --accent: green;
+        --ink: white;
+        --paper: black;
+}
+
+
+h1
+{
+        background-color: burlywood;
+        color: red;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 3em;
+        margin: 0;
+        text-align: center;
+        top: 0;
+        width: 100%;
+}
+
+.header-container
+{
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+}
+
+#theme-toggle
+{
+        background-color: #007bff;
+        border-radius: 5px;
+        border: none;
+        color: white;
+        cursor: pointer;
+        padding: 10px 20px;
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        &:hover
+        {
+                background-color: black;
+        }
+}
+
+/* Basic reset to remove default browser margins and padding */
+nav
+{
+        background-color: #333; /* Dark background color */
+        height: 100vh;
+        left: 0;
+        position: fixed;
+        top: 0;
+        width: 13%;
+}
+nav ul 
+{
+        list-style-type: none; /* Removes bullet points */
+        margin: 0;
+        padding: 0;
+}
+
+.nav-bar 
+{
+        color: white;
+}
+
+.nav-bar ul {
+        display: flex; /* Uses Flexbox to arrange list items horizontally */
+        justify-content: flex-start; /* Aligns items to the start of the container */
+}
+
+.nav-bar li a 
+{
+        color: white; /* Text color */
+        display: block; /* Makes the entire link area clickable */
+        padding: 14px 16px; /* Space around links */
+        text-align: flex-start;
+        text-decoration: none; /* Removes default underline */
+        text-transform: uppercase;
+}
+
+/* Change the background color of links on hvover */
+.nav-bar li a:hover {
+        background-color: rgba(12, 255, 200);
+        color: black;
+}
+
+.nav-bar li a.active
+{
+        background-color: hotpink; /* Change background color */
+        box-shadow: none; /* Remove shadow to enhance 'pressed' look */
+        color: black;
+        transform: translateY(2px); /* Add a 'pressed' effect by moving it down */
+}

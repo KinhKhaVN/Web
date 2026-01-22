@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+
+<html>
+
+       <head>
+               <meta lang="vi">
+                <meta name="viewport" content="width=device-width, initial-scale=1">
+                <meta charset="UTF-8">
+                <link rel="stylesheet", href="index.css">
+                <title>PHẦN MỀM THI ĐUA 2026</title>
+
+        </head>
+
+        <body>
+                <!--header class="header-container"> 
+
+                        <h1> <strong> PHẦN MỀM THI ĐUA 2026 </strong> </h1>
+                        <button id="theme-toggle"> Toggle Dark Mode  </button>
+                        <nav class="nav-bar">
+                                <li><a class="active" href="main.html" onclick="changeBg()">Trang chủ</a></li>
+                                <li><a href="#database" onclick="changeBg()">Cơ sở dữ liệu</a></li>
+                                <li><a href="#setting" onclick="changeBg()" > Cài đặt </a></li>
+                                <li><a href="#diary"> Nhật ký </a></li>
+                                <li><a href="#instruct"> Hướng dẫn </a></li>
+
+                        </nav>
+                </header-->
+
+                <main>
+                        <table border="1" style="width: 100%;" >
+                                <thead>
+                                        <tr>
+                                                <th>ID</th>
+                                                <th> Họ và tên</th>
+                                                <th> Chức vụ </th>
+                                        </tr>
+                                </thead>
+                                <tbody id="tbody"></tbody>
+                        </table>
+                </main>
+
+
+                <!--script>
+                        fetch('http://localhost:3000/DanhSachTinh')
+                                .then(res => res.json())
+                                .then(data => {
+                                        const tbody = document.getElementById('tbody');
+
+                                        data.forEach(row => {
+                                                const tr = document.createElement('tr');
+                                                tr.innerHTML = `
+                <td>${row.ID}</td>
+                <td>${row.HoVaTen}</td>
+                <td>${row.ChucVu}</td>
+            `;
+                                                tbody.appendChild(tr);
+                                        });
+                                });
+                </script-->
+
+                <script src="index.js"></script>
+
+        </body>
+
+
+
+</html>
