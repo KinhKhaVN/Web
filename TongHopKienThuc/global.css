@@ -2,7 +2,13 @@
 {
   --paper: lightgray;
   --ink: black;
-  --container-width: 800px;
+  --container-width: 1200;
+  --bg-primary: #E9E9F2;
+  --bg-secondary: #FFFFFF;
+  --primary: #1A05A2;
+  --text-primary: #4B4B4B;
+  --text-secondary: #777777;
+  --text-muted: #AFAFAF;
 }
 
 *
@@ -20,7 +26,7 @@ html
 body
 {
   display: block;
-  background-color: var(--paper);
+  background-color: var(--bg-primary);
   color: var(--ink);
 }
 
@@ -33,10 +39,11 @@ body
 
 .card
 {
+  background-color: var(--bg-secondary);
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  border: 1px solid;
+  border: 1px none;
   border-radius: 10px;
   padding: 1.5rem;
   transition: transform .2s ease, box-shadow .2s ease;
@@ -46,6 +53,25 @@ body
 {
   transform: translateY(-2px);
   cursor:pointer;
+}
+
+.card h3
+{
+  color: var(--primary);
+}
+
+.card p
+{
+  color: var(--text-primary);
+  line-height: 1.7;
+}
+
+.card-container
+{
+  display: grid;
+  gap: 1.5rem;
+  max-width: 800px;
+  margin: 30px auto;
 }
 
 
