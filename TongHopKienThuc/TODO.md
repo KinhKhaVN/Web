@@ -4,14 +4,14 @@
 - [x] Màu nền
     - --bg-primary: #E9E9F2;
     - --bg-secondary: #FFFFFF;
-- [] Màu chữ
-- [] Màu hover
+- [x] Màu chữ
+- [x] Màu hover
 - 
 
 
 ### Tạo hệ thống font chữ
-- [] Kiểu chữ
-- [] Cỡ chữ
+- [x] Kiểu chữ
+- [x] Cỡ chữ
 - [x] Màu chữ
 
 
@@ -19,7 +19,9 @@
 - [x] Tiêu đề Card
 - [x] Nội dung Card
 - [x] Bo góc
-- [] Box shadow
+- [] Màu đổ bóng
 - [x] Card hover
 
 
+### Tạo thanh tìm kiếm
+- [] Tạo thanh tiềm kiếm mờ
