@@ -1,0 +1,11 @@
+h1
+{
+  text-align: center;
+  border: 1px solid black;
+}
+
+canvas
+{
+  width: 40%;
+  border: 1px solid black;
+}
