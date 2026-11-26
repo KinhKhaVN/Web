@@ -4,6 +4,8 @@ const btnSubmit = document.getElementById("btnSubmit");
 const btnClear = document.getElementById("btnClear");
 const btnCreateNested = document.getElementById("btnCreateNested");
 
+// Using JQuery to hide a button
+
 inp.addEventListener("keypress", event => {
   if (event.key == "Enter")
   {
@@ -62,3 +64,13 @@ function CreateNested()
 
   containerNested.appendChild(fragment);
 }
+
+
+
+$(document).ready(function(){
+  $("#container").onclick(function(){
+    $(this).hide();
+  });
+});
+
+
