@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title> Nav and Tab </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-yEPZ7jP9S0QKiUQ0m3jjsO4ProIW7wvR9gXkI7JOGa2XVsw53Yke2bsdkBbjmmiX" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-4.0.0.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/js/bootstrap.min.js" integrity="sha384-89aa4glufciPv46aKltztWQEmk+Tu9W2RhzXr6VcnUUEub7F8+06RcL2RYLCOHUq" crossorigin="anonymous"></script>
+  </head>
+
+
+
+  <body>
+    <nav class="nav nav-tabs justify-content-center">
+      <a class="nav-link active" aria-current="page" href="#">Active</a>
+      <a class="nav-link" href="#">Link</a>
+      <a class="nav-link" href="#">Link</a>
+      <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+    </nav>
+
+    <button type="button" class="btn btn-info btn-lg"
+                          data-bs-toggle="modal"
+                          data-bs-target="#my-modal"
+                          >
+                          My Modal
+    </button>
+
+      <!-- Declare Modal -->
+      <div id="my-modal" class="modal fade" role="dialog" tabindex="-1" data-bs-keyboard="true" >
+        <div class="modal-dialog" modal-dialog-scrollable> <!-- Type -->
+
+
+        <!-- Modal Content -->
+        <div class="modal-content">
+          <div class="modal-header bg-info">
+            <div>
+              <h1 class="modal-title"> Modal Title </h1>
+            </div>
+          </div>
+
+
+          <!-- Modal Body -->
+          <div class="modal-body bg-success">
+            <p> Modal body </p>
+            <h5> hi </h5>
+          </div>
+
+          <!-- Modal Footer -->
+          <div class="modal-footer bg-warning">
+            <button type="button"
+                    class="btn btn-default bg-danger text-white"
+                    data-bs-dismiss="modal">
+              Close
+            </button >
+          </div>
+        </div>
+        </div>
+      </div>
+
+
+      <!-- Nút bấm tạo toast -->
+      <button type="button" class="btn btn-primary m-4" id="liveToastBtn">
+        Hiển thị Toast mới
+      </button>
+
+      <!-- Container chứa các toast -->
+      <div class="toast-container position-fixed top-0 end-0 p-3" id="toastContainer"></div>
+
+
+
+  </body>
+
+  <script>
+    function showToast(toast, type, message)
+    {
+      toast.innerHTML = "";
+      const header = document.createElement("div");
+      const body = document.createElement("div");
+
+      header.className = `toast-header bg-${type} bg-opacity-25`;
+      header.innerHTML = 
+        `
+      <strong class="me-auto">${message.header}</strong>
+      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+      `;
+      body.className = "toast-body";
+      body.textContent = message.body;
+
+      toast.append(header, body);
+
+      const toastInstance = bootstrap.Toast.getOrCreateInstance(toast);
+      toastInstance.show();
+    }
+  </script>
+
+  <script>
+    const toastTrigger = document.getElementById('liveToastBtn');
+    const toastContainer = document.getElementById('toastContainer');
+    let count = 0;
+
+    if (toastTrigger) {
+      toastTrigger.addEventListener('click', () => {
+        count++;
+        const timeNow = new Date().toLocaleTimeString('vi-VN', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+
+        // 1. Tạo phần tử toast mới
+        const toastEl = document.createElement('div');
+        toastEl.className = 'toast toast-slide-in';
+        toastEl.setAttribute('role', 'alert');
+        toastEl.setAttribute('aria-live', 'assertive');
+        toastEl.setAttribute('aria-atomic', 'true');
+
+        toastEl.innerHTML = `
+      <div class="toast-header">
+        <span class="badge bg-primary me-2">#${count}</span>
+        <strong class="me-auto">Thông báo mới</strong>
+        <small class="text-body-secondary">${timeNow}</small>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+      <div class="toast-body">
+        Đây là thông báo số <strong>${count}</strong>. Các thông báo cũ đã được đẩy xuống dưới.
+      </div>
+    `;
+
+        // 2. Chèn toast mới lên TRÊN CÙNG của container
+        toastContainer.prepend(toastEl);
+
+        // 3. Khởi tạo và hiển thị toast bằng Bootstrap API
+        const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastEl, {
+          autohide: true,
+          delay: 4000
+        });
+        toastBootstrap.show();
+
+        // 4. Xóa element khỏi HTML sau khi ẩn hoàn toàn để tối ưu bộ nhớ
+        toastEl.addEventListener('hidden.bs.toast', () => {
+          toastEl.remove();
+        });
+      });
+    }
+
+  </script>
+
+</html>
