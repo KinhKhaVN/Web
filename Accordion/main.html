@@ -14,69 +14,151 @@
 
   <body>
 
-    <header class="container text-danger text-center">
-      <h1>Accordion la 1 component trong Bootstrap, cho phep mo rong va thu nho noi dung chua ben trong</h1<
+    <header class="container text-danger text-center border border-danger">
+      <h1>Accordion la 1 component trong Bootstrap<br/> Cho phep <strong class="text-primary">mo rong</strong><br/>Thu nho noi dung chua ben trong</h1>
     </header>
 
-    <div id="accordion-root" class="accordion">
-      <div class="accordion-item">
-        <h2 class="accordion-header">
-          Header
-          <button class="accordion-button"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#du-thao1"
-                  aria-expanded="true"
-                  aria-controls="du-thao1">
-            Du thao Nghi phep ngay 26/11/2026
-          </button>
-        </h2>
-        <div id="du-thao1" class="accordion-collapse collapse">
-          <div class="accordion-body">
-            Chi tiet Nghi phep UI
-          </div>
-        </div>
-      </div>
-      <div class="accordion-item">
-        <h2 class="accordion-header">
-          Header
-          <button class="accordion-button"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#du-thao2"
-                  aria-expanded="true"
-                  aria-controls="du-thao2">
-            Du thao Nghi phep ngay 26/12/2026
-          </button>
-        </h2>
-        <div id="du-thao2" class="accordion-collapse collapse">
-          <div class="accordion-body">
-            Chi tiet Nghi phep UI
-          </div>
-        </div>
-      </div>
-      <div class="accordion-item">
-        <h2 class="accordion-header">
-          Header
-          <button class="accordion-button"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#du-thao3"
-                  aria-expanded="true"
-                  aria-controls="du-thao3">
-            Du thao Nghi phep ngay 01/01/2027
-          </button>
-        </h2>
-        <div id="du-thao3" class="accordion-collapse collapse">
-          <div class="accordion-body">
-            Chi tiet Nghi phep UI
-          </div>
-        </div>
+    <div class="container mb-3">
+      <div class="btn-group ">
+        <button id="btn-add-accordion" type="button" class="btn btn-outline-primary">Add Accordion</button>
+        <button id="btn-delete-accordion" type="button" class="btn btn-outline-danger">Delete Accordion</button>
       </div>
     </div>
 
+    <div class="container">
+      <div id="accordion-root" class="accordion">
+        <div class="accordion-row d-flex align-items-start gap-2 mb-2">
+          <div class="accordion-item flex-grow-1">
+            <h2 class="accordion-header">
+              Header
+              <button class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#du-thao1"
+                      aria-expanded="true"
+                      aria-controls="du-thao1">
+                Du thao Nghi phep ngay 26/11/2026
+              </button>
+            </h2>
+            <div id="du-thao1" class="accordion-collapse collapse" data-bs-parent="#accordion-root">
+              <div class="accordion-body ">
+                <table class="table table-hover">
+                  <thead>
+                    <tr>
+                      <th>Id</th>
+                      <th>Ho va ten</th>
+                      <th>Que quan</th>
+                      <th>Cap bac</th>
+                      <th>Chuc vu</th>
+                      <th>Don vi</th>
+                      <th>Noi nghi</th>
+                      <th>Ly do</th>
+                      <th>Thoi gian nghi</th>
+                      <th>Tong so ngay nghi</th>
+                      <th>Ngay phep con lai</th>
+                      <th>Ghi chu</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="text-center">H29210</td>
+                      <td class="text-center">Nguyen Kinh Kha</td>
+                      <td class="text-center">Vinh Long</td>
+                      <td class="text-center">H1</td>
+                      <td class="text-center">Chien si</td>
+                      <td class="text-center">C2-D2-E09</td>
+                      <td class="text-center">Vinh Long</td>
+                      <td class="text-center">Nghi phep Tet</td>
+                      <td class="text-center">01/01/2027</td>
+                      <td class="text-center">07</td>
+                      <td class="text-center">0</td>
+                      <td class="text-center">Di ve bang xe khach</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class="d-flex gap-1 mt-2">
+            <button type="button" class="btn btn-success btn-sm btn-done">Done</button>
+            <button type="button" class="btn btn-danger btn-sm btn-delete">Delete</button>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            Header
+            <button class="accordion-button"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#du-thao2"
+                    aria-expanded="true"
+                    aria-controls="du-thao2">
+              Du thao Nghi phep ngay 26/12/2026
+            </button>
+          </h2>
+          <div id="du-thao2" class="accordion-collapse collapse" data-bs-parent="#accordion-root">
+            <div class="accordion-body text-warning">
+              Chi tiet Nghi phep 2 UI
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            Header
+            <button class="accordion-button"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#du-thao3"
+                    aria-expanded="true"
+                    aria-controls="du-thao3">
+              Du thao Nghi phep ngay 01/01/2027
+            </button>
+          </h2>
+          <div id="du-thao3" class="accordion-collapse collapse" data-bs-parent="#accordion-root">
+            <div class="accordion-body text-success">
+              Chi tiet Nghi phep 3 UI
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
 
   </body>
+
+  <script src="script.js"></script>
+
+  <script>
+    const addBtn = document.getElementById("btn-add-accordion");
+    const deleteBtn = document.getElementById("btn-delete-accordion");
+    const clone = document.querySelector(".accordion-item");
+
+    addBtn.addEventListener("click", () => {
+      addAccordionTo("accordion-root", clone);
+    });
+
+    deleteBtn.addEventListener("click", () => {
+      deleteAccordionItem("accordion-root");
+    });
+  </script>
+
+  <script>
+    document.getElementById("accordion-root").addEventListener("click", (e) => {
+      const row = e.target.closest(".accordion-row");
+      if (!row) return;
+
+      // Khi bấm Delete ở từng dòng -> Xóa đúng dòng đó
+      if (e.target.classList.contains("btn-delete")) {
+        row.remove();
+      }
+
+      // Khi bấm Done ở từng dòng -> Gạch ngang tiêu đề
+      if (e.target.classList.contains("btn-done")) {
+        const btn = row.querySelector(".accordion-button");
+        btn.classList.toggle("text-decoration-line-through");
+        btn.classList.toggle("text-muted");
+      }
+    });
+  </script>
 
 
 </html>
